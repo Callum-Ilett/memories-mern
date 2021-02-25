@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon -r dotenv/config src/index.js dotenv_config_path=.env",
-    "start": "node -r dotenv/config src/index.js dotenv_config_path=.env"
+    "start": "node -r dotenv/config src/index.js"
   },
   "author": "",
   "license": "ISC",
