@@ -1,6 +1,10 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:5000/api";
+const baseURL =
+  process.env.NODE_ENV === "development"
+    ? "http://localhost:5000/api"
+    : "https://memories-app-demo.herokuapp.com/api";
+
 const API = axios.create({ baseURL });
 
 API.interceptors.request.use((req) => {
