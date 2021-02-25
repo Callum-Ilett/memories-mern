@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Grow, Grid } from "@material-ui/core";
+import { Container, Grow, Grid, useMediaQuery } from "@material-ui/core";
 import { useDispatch } from "react-redux";
 
 import { getPosts } from "redux/actions/posts";
@@ -8,6 +8,7 @@ import { Form, Posts } from "components";
 const Home = () => {
   const [currentId, setCurrentId] = useState(0);
   const dispatch = useDispatch();
+  const largeScreen = useMediaQuery((theme) => theme.breakpoints.up("md"));
 
   useEffect(() => {
     dispatch(getPosts());
@@ -21,6 +22,7 @@ const Home = () => {
           justify="space-between"
           alignItems="stretch"
           spacing={3}
+          direction={!largeScreen && "column-reverse"}
         >
           <Grid item xs={12} sm={7}>
             <Posts setCurrentId={setCurrentId} />
