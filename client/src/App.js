@@ -4,8 +4,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import { Home, Navbar, Auth } from "components";
 
-console.log(process.env.REACT_APP_GOOGLE_CLIENT_ID);
-console.log(process.env.TEST);
+console.log("REACT_APP" + process.env.REACT_APP_GOOGLE_CLIENT_ID);
+console.log("test" + process.env.TEST);
 
 const App = () => (
   <BrowserRouter>
